@@ -9,7 +9,7 @@
 //   }
 // }
 class User {
-  private _courseCount = 1;
+  protected _courseCount = 1;
   readonly city: string = "Bijapur";
   constructor(public email: string, public name: string) {}
 
@@ -33,4 +33,15 @@ class User {
   }
 }
 
+class SubUser extends User {
+  isfamily: boolean = true;
+  changeCourseCount() {
+    this._courseCount = 4;
+  }
+}
+
 const asif = new User("asif@gamil.com", "Asif Ahmed");
+
+// ***** NOTE *****
+// private declared variables are only accessible in that class
+// protected declared variables are accessible in that class and any class which inherit that class in whc=ich it is declared
